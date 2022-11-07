@@ -6,14 +6,13 @@ function EachTeam() {
   // console.log(params.id);
   const [teams, setTeams] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     fetch("http://127.0.0.1:9292/teams")
-    .then((response) => response.json())
-    .then((data) => {
-      setTeams(data);
-    }, []);
-  })
-
+      .then((response) => response.json())
+      .then((data) => {
+        setTeams(data);
+      }, []);
+  });
 
   const showEachTeam = teams.map(
     (team) =>
@@ -22,12 +21,11 @@ function EachTeam() {
           <h1>{team.name}</h1>
           {team.players.map((player) => (
             <div>
-              <img src={player.image}/>
+              <img src={player.image} />
               <h2>{player.name}</h2>
               <h3>{player.position}</h3>
-              <p>{player.goals}</p>
-              <p>{player.assists}</p>
-              
+              Goals: <p>{player.goals}</p>
+              Assists: <p>{player.assists}</p>
             </div>
           ))}
         </div>

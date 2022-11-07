@@ -12,6 +12,7 @@ function AddPlayer() {
         <input type="text" placeholder ="Player name" value={name} onChange={(e)=>setName(e.target.value)} />
         <input type="text" placeholder ="Image" value={image} onChange={(e)=>setImage(e.target.value)} />
         <input type="text" placeholder ="position" value={position} onChange={(e)=>setPosition(e.target.value)} />
+        <button type="submit">Add Player</button>
       </form>
     </div>
     

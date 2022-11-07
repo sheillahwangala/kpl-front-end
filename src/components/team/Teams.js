@@ -1,12 +1,32 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Teams() {
-  fetch("http://127.0.0.1:9292/teams")
+
+  const [teams, setTeams] = useState([])
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:9293/teams")
     .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    }, []);
-  return <div>Team</div>;
+    .then((data) => setTeams(data));
+  }, []);
+  
+  const displayTeams = teams.map((team) => (
+    <div key={team.id} >
+      <h2>{team.name}</h2>
+      <img src={team.logo} alt="logo" height="100px" />
+      <h5>{team.coach} </h5>
+      <Link to={`/teams/${team.id}`} >See Team</Link>
+
+    </div>
+  ))
+
+  return (
+    <div>
+        {displayTeams}
+    </div>
+  );
 }
 
 export default Teams;

@@ -8,7 +8,7 @@ function Teams() {
   const [teams, setTeams] = useState([])
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9293/teams")
+    fetch("http://127.0.0.1:9292/teams")
     .then((response) => response.json())
     .then((data) => setTeams(data));
   }, []);

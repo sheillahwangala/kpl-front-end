@@ -1,21 +1,22 @@
-import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Team from "./components/team/Team";
-import Player from "./components/player/Player"
-import Nav from "./components/nav/Nav"
+import Teams from "./components/team/Teams";
+import Player from "./components/player/Player";
+import Nav from "./components/nav/Nav";
+import TeamStats from "./components/team/TeamStats";
+import PlayersStats from "./components/player/PlayersStats";
+import EachTeam from "./components/team/EachTeam";
 
 function App() {
-
-
   return (
     <div className="App">
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<Team />} />
-          <Route path="/teams" element={<Team />} />
+          <Route path="/" element={<Teams />} />
           <Route path="/player" element={<Player />} />
-          {/* <Route path="/team-stats" element={<TeamStats />} /> */}
+          <Route path="/team-stats" element={<TeamStats />} />
+          <Route path="/players-stats" element={<PlayersStats />} />
+          <Route path="/teams/:id" element={<EachTeam />} />
         </Routes>
       </BrowserRouter>
     </div>

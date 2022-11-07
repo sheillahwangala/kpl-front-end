@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import './team.css'
+
 
 function Teams() {
 
@@ -14,6 +16,7 @@ function Teams() {
   }, []);
   
   const displayTeams = teams.map((team) => (
+
     <div key={team.id} className="container" >
       <h2>{team.name}</h2>
       <img src={team.logo} alt="logo" height="100px" />
@@ -23,6 +26,8 @@ function Teams() {
     </div>
   ))
 
+
+
   return (
     <div>
         {displayTeams}
@@ -30,4 +35,4 @@ function Teams() {
   );
 }
 
-export default Teams;
+export default Teams

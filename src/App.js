@@ -5,7 +5,7 @@ import Nav from "./components/nav/Nav";
 import TeamStats from "./components/team/TeamStats";
 import PlayersStats from "./components/player/PlayersStats";
 import EachTeam from "./components/team/EachTeam";
-
+import Players from "./components/player/Players";
 function App() {
   return (
     <div className="App">
@@ -17,6 +17,7 @@ function App() {
           <Route path="/team-stats" element={<TeamStats />} />
           <Route path="/players-stats" element={<PlayersStats />} />
           <Route path="/teams/:id" element={<EachTeam />} />
+          <Route path="/player" element={<Players />} />
         </Routes>
       </BrowserRouter>
     </div>

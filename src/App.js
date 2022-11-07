@@ -17,7 +17,7 @@ function App() {
           <Route path="/team-stats" element={<TeamStats />} />
           <Route path="/players-stats" element={<PlayersStats />} />
           <Route path="/teams/:id" element={<EachTeam />} />
-          <Route path="/player" element={<Players />} />
+          <Route path="/players" element={<Players />} />
         </Routes>
       </BrowserRouter>
     </div>

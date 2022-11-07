@@ -15,6 +15,10 @@ function Players() {
   const displayPlayers = players.map((player) => (
     <div key={player.id} >
       <h2>{player.name}</h2>
+      <h2>{player.image}</h2>
+      <h2>{player.position}</h2>
+      <h2>{player.goals}</h2>
+      <h2>{player.assists}</h2>
       <Link to={`/players/${player.id}`} >See Players</Link>
 
     </div>

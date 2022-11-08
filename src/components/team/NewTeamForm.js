@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewTeamForm() {
+function NewTeamForm({ setTeams }) {
   const [name, setName] = useState("");
   const [logo, setLogo] = useState("");
   const [coach, setCoach] = useState("");
@@ -19,7 +19,7 @@ function NewTeamForm() {
       }),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => setTeams(data));
   };
 
   return (

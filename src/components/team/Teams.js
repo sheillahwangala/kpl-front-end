@@ -26,7 +26,7 @@ function Teams() {
   return (
     <div>
       {displayTeams}
-      <NewTeamForm />
+      <NewTeamForm setTeams={setTeams} />
     </div>
   );
 }

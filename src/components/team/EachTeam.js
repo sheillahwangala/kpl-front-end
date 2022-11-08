@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import AddPlayer from '../player/AddPlayer'
 
 function EachTeam() {
   const params = useParams();
+  const [teamId, setTeamId] = useState(Number(params.id))
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -35,6 +37,7 @@ function EachTeam() {
     <div>
       EachTeam
       {showEachTeam}
+      <AddPlayer teamId={teamId}/>
     </div>
   );
 }

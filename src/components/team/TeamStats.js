@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState, useEffect } from "react";
 
 function TeamStats() {
+
   const [topTeams, setTopTeams] = useState([]);
 
   useEffect(() => {

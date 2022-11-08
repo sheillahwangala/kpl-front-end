@@ -25,7 +25,7 @@ function EachTeam() {
             <div>
               <img src={player.image} />
               <h2>{player.name}</h2>
-             
+             <button type="button" onClick="">Delete</button>
               <Link to={`/players/${player.id}`}>See Player</Link>
             </div>
           ))}

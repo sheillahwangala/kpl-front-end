@@ -5,6 +5,23 @@ function NewTeamForm() {
   const [logo, setLogo] = useState("");
   const [coach, setCoach] = useState("");
 
+  const createTeam = (e) => {
+    e.preventDefault();
+    fetch("http://127.0.0.1:9292/teams", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        logo: logo,
+        coach: coach,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
       <input
@@ -25,13 +42,7 @@ function NewTeamForm() {
         value={coach}
         onChange={(e) => setCoach(e.target.value)}
       />
-      <button
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          alert("Team Added");
-        }}
-      >
+      <button type="submit" onClick={createTeam}>
         Create Team
       </button>
     </div>

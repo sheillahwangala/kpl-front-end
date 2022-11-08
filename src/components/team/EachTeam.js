@@ -36,6 +36,7 @@ function EachTeam() {
     <div>
       EachTeam
       {showEachTeam}
+      <AddPlayer/>
     </div>
   );
 }

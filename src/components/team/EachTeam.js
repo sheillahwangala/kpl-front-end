@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function EachTeam() {
   const params = useParams();
@@ -26,6 +26,7 @@ function EachTeam() {
               <h3>{player.position}</h3>
               Goals: <p>{player.goals}</p>
               Assists: <p>{player.assists}</p>
+              <Link to={`/players/${player.id}`}>See Player</Link>
             </div>
           ))}
         </div>

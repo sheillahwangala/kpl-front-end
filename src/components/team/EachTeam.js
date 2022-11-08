@@ -4,6 +4,7 @@ import AddPlayer from '../player/AddPlayer'
 
 function EachTeam() {
   const params = useParams();
+  const [teamId, setTeamId] = useState(Number(params.id))
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ function EachTeam() {
     <div>
       EachTeam
       {showEachTeam}
-      <AddPlayer/>
+      <AddPlayer teamId={teamId}/>
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 function EachTeam() {
   const params = useParams();
-  // console.log(params.id);
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -19,6 +18,7 @@ function EachTeam() {
       team.id === parseInt(params.id) && (
         <div>
           <h1>{team.name}</h1>
+          <img src={team.logo} alt="logo" height="100px" />
           {team.players.map((player) => (
             <div>
               <img src={player.image} />

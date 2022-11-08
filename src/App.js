@@ -13,7 +13,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Teams />} />
-          <Route path="/player" element={<Player />} />
+          <Route path="/players/:id" element={<Player />} />
           <Route path="/team-stats" element={<TeamStats />} />
           <Route path="/players-stats" element={<PlayersStats />} />
           <Route path="/teams/:id" element={<EachTeam />} />

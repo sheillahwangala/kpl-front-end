@@ -6,6 +6,19 @@ function AddPlayer({teamId}) {
  const [position, setPosition] = useState("");
  const [player, setPlayer] = useState([]);
 
+ const uploadImage = (files) => {
+  const formData = new FormData();
+  formData.append("file", files[0]);
+  formData.append("upload_preset", "e2e6z2lx");
+  fetch("https://api.cloudinary.com/v1_1/dakiak4mc/image/upload", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      setImage(data.secure_url);
+    });
+};
 
 
  const createPlayer = (e) => {
@@ -33,7 +46,13 @@ function AddPlayer({teamId}) {
       <div>AddPlayer</div>
     <div>
         <input type="text" placeholder ="Player name" value={name} onChange={(e)=>setName(e.target.value)} />
-        <input type="text" placeholder ="Image" value={image} onChange={(e)=>setImage(e.target.value)} />
+        <input
+        type="file"
+        id="file-selector"
+        onChange={(e) => {
+          uploadImage(e.target.files);
+        }}
+      />
         <input type="text" placeholder ="position" value={position} onChange={(e)=>setPosition(e.target.value)} />
         <button type="submit" onClick={createPlayer}>Add Player</button>
     </div>

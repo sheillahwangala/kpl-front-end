@@ -40,6 +40,13 @@ function NewTeamForm({ setTeams }) {
     <div>
       <label>Logo</label>
       <input
+        type="file"
+        id="file-selector"
+        onChange={(e) => {
+          uploadImage(e.target.files);
+        }}
+      />
+      <input
         type="text"
         placeholder="Team Coach"
         value={coach}
@@ -50,13 +57,6 @@ function NewTeamForm({ setTeams }) {
         placeholder="Team Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="file"
-        id="file-selector"
-        onChange={(e) => {
-          uploadImage(e.target.files);
-        }}
       />
 
       <button type="submit" onClick={createTeam}>

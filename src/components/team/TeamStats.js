@@ -16,8 +16,12 @@ function TeamStats() {
       <h5>{topTeam.coach} </h5>
     </div>
   ));
+
   return (
-    <div>TeamStats</div>
+    <div>
+      TeamStats
+      {displayTopTeams}
+    </div>
   )
 }
 

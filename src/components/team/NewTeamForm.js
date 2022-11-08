@@ -9,13 +9,14 @@ function NewTeamForm({ setTeams }) {
     const formData = new FormData();
     formData.append("file", files[0]);
     formData.append("upload_preset", "e2e6z2lx");
-    Axios.post(
-      "https://api.cloudinary.com/v1_1/dakiak4mc/image/upload",
-      formData
-    ).then((res) => {
-      console.log(res.data.url);
-      setLogo(res.data.url);
-    });
+    fetch("https://api.cloudinary.com/v1_1/dakiak4mc/image/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setLogo(data.secure_url);
+      });
   };
 
   const createTeam = (e) => {

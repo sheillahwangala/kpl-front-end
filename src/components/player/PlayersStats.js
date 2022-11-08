@@ -19,7 +19,7 @@ function PlayersStats() {
     </div>
   ));
   return (
-    <div>PlayersStats
+    <div>
       {playerStatistics}
     </div>
   )

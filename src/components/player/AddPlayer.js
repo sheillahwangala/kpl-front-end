@@ -26,6 +26,8 @@ function AddPlayer({teamId}) {
     .then((data) => setPlayer(data));
 };
 
+// console.log(teamId)
+
   return (
     <div>
       <div>AddPlayer</div>
@@ -33,7 +35,7 @@ function AddPlayer({teamId}) {
         <input type="text" placeholder ="Player name" value={name} onChange={(e)=>setName(e.target.value)} />
         <input type="text" placeholder ="Image" value={image} onChange={(e)=>setImage(e.target.value)} />
         <input type="text" placeholder ="position" value={position} onChange={(e)=>setPosition(e.target.value)} />
-        <button type="button" onClick={createPlayer}>Add Player</button>
+        <button type="submit" onClick={createPlayer}>Add Player</button>
     </div>
     
     </div>

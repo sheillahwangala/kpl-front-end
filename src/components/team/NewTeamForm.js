@@ -7,11 +7,33 @@ function NewTeamForm() {
 
   return (
     <div>
-      <input type="text" placeholder="Team Name"  value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="text" placeholder="Team Logo" value={logo} onChange={(e) => setLogo(e.target.value)} />
-        <input type="text" placeholder="Team Coach" value={coach} onChange={(e) => setCoach(e.target.value)} />
-        <button type="submit">Create Team</button>
-    
+      <input
+        type="text"
+        placeholder="Team Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Team Logo"
+        value={logo}
+        onChange={(e) => setLogo(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Team Coach"
+        value={coach}
+        onChange={(e) => setCoach(e.target.value)}
+      />
+      <button
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          alert("Team Added");
+        }}
+      >
+        Create Team
+      </button>
     </div>
   );
 }

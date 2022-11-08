@@ -42,13 +42,13 @@ function EachTeam() {
                   .catch(err => console.log(err));
               }}>
                 Delete
-                </button>
+                </button><br></br>
               <Link to={`/players/${player.id}`}>See Player</Link>
             </div>
           ))}
         </div>
       )
-  );
+  ); 
 
   const updateTeamData = (e) => {
     e.preventDefault();

@@ -25,7 +25,20 @@ function EachTeam() {
             <div>
               <img src={player.image} />
               <h2>{player.name}</h2>
-             <button type="button" onClick="">Delete</button>
+             <button type="button" onClick = {(e)=>{
+              e.preventDefault()
+              fetch(`http://127.0.0.1:9292/players/{$player.id}`, {
+              method: 'DELETE'
+                })
+                  .then(res => res.json())
+                  .then(data => {
+                    // Do some stuff...
+                    console.log(data)
+                  })
+                  .catch(err => console.log(err));
+              }}>
+                Delete
+                </button>
               <Link to={`/players/${player.id}`}>See Player</Link>
             </div>
           ))}

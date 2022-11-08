@@ -18,6 +18,9 @@ function Player() {
       player.id === Number(params.id) && (
         <div>
           <p>{player.name}</p>
+          Goals: <p>{player.goals}</p>
+          Assists: <p>{player.assists}</p>
+          Position:<h3>{player.position}</h3>
         </div>
       )
   );

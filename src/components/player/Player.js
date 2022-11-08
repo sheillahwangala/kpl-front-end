@@ -9,7 +9,30 @@ function Player() {
     .then((data)=>setPlayer(data));
   },[]);
   const displayPlayer = player.map((play)=>(
-               
+    <tr key={play.id}>
+    <td>{play.id}</td>
+    <td>{play.name}</td>
+    <td><img src={play.image} alt="logo"/></td>
+    <td>{play.position}</td>
+    <td>{play.goals}</td>
+    <td>{play.assists}</td>
+    <td>{play.team_id}</td>
+    <td>
+      <tr>
+        <td>{play.team.id}</td>
+        <td>{play.team.name}</td>
+        <td><img src={play.team.Logo} alt="logo"/></td>
+        <th>{play.team.matches_played}</th>
+        <th>{play.team.matches_won}</th>
+        <th>{play.team.matches_lost}</th>
+        <th>{play.team.matches_drawn}</th>
+        <th>{play.team.points}</th>
+        <th>{play.team.coach}</th>
+        <th>{play.team.created_at}</th>
+        <th>{play.team.updated_at}</th>
+      </tr>
+    </td>
+  </tr>       
   ))
   return (
     <div className='table_for_player'>

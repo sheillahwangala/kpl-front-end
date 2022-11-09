@@ -1,6 +1,6 @@
 *{
     background-color:white;
-    text-align: center;
+    
 }
 h4{
     font-size: 25px;
@@ -14,11 +14,8 @@ p{
 
 }
 
- .update{
-    display: block;
-    align-items: center;
-    justify-content: center;
- }
+
+ 
  .update div{
     width: 100px;
     height: 100px;
@@ -28,6 +25,10 @@ p{
     max-width: 30rem;
     background-color: blueviolet;
     display: block;
+    align-items: center;
+    justify-content: space-around;
+    max-height: 50em;
+    max-width: 20rem;
  }
  .buttons{
     background-color:purple;

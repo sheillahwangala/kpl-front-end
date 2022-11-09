@@ -64,7 +64,7 @@ function Player() {
         onChange={(e) => setAssists(e.target.value)}
         value={assists}
       />
-      <button type="button" onClick={updatePlayer}>
+      <button className="buttons" type="button" onClick={updatePlayer}>
         Update Player
       </button>
     </div>

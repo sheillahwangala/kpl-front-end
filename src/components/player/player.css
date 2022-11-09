@@ -1,11 +1,25 @@
-.table_for_player{
-    padding: 1%;
-    color: white;
-    min-width: 170%;
+*{
+    background-color:white;
+    margin: 5px;
 }
-.table_for_player table {
-    border: 2px solid black;
-    text-align: center;
-    background-color: rgb(79, 99, 19);
+h4{
+    font-size: 25px;
 }
+h5{
+    font-size: 20px;
+
+}
+p{
+    font-size: 25px;
+
+}
+
+ .update{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .update div{
+    width
+ }
 

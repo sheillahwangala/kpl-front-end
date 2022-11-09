@@ -23,4 +23,13 @@ p{
     width: 100px;
     height: 100px;
  }
+ input{
+    max-height: 10rem;
+    max-width: 30rem;
+ }
+ button{
+    background-color: black;
+    border-radius: 10rem;
+   
+ }
 

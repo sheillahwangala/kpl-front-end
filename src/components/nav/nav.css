@@ -60,3 +60,34 @@ button{
 }
 
 /*  Responsiveness media queries*/
+
+@media (max-width: 768px) {
+  .nav__links{
+    display: none;
+  }
+   
+  .nav__links__mobile{
+    position: absolute;
+    display: block;
+    list-style:none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+    left: 0;
+    top: 10%;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    background-color: #8F6CC6;
+  }
+  ul li{
+    padding: 32px;
+    width: 100%;
+    transition: all 05s ease-in-out;
+    text-align: center;
+  }
+
+  .mobile__menu__icon{
+    position: absolute;
+    display: block;
+    right: 20px;
+  }
+}
+

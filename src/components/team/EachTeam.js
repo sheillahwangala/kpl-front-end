@@ -18,7 +18,7 @@ function EachTeam() {
       .then((response) => response.json())
       .then((data) => {
         setTeams(data);
-      }, []);
+      });
   });
 
   const showEachTeam = teams.map(
@@ -52,7 +52,10 @@ function EachTeam() {
             {team.players.map((player) => (
               <div className="d-flex flex-column justify-content-center border border-2  rounded-3 m-2 p-2 each-player-div">
                 <img src={player.image} alt="Img" height="200px" />
-                <Link to={`/players/${player.id}`} className="text-decoration-none text-dark">
+                <Link
+                  to={`/players/${player.id}`}
+                  className="text-decoration-none text-dark"
+                >
                   <h2 className="text-center">{player.name}</h2>
                 </Link>
 
@@ -77,7 +80,7 @@ function EachTeam() {
 
   const updateTeamData = (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:9292/players/${params.id}`, {
+    fetch(`http://127.0.0.1:9292/teams/${teamId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -89,20 +92,12 @@ function EachTeam() {
         matches_drawn: matches_drawn,
         points: points,
       }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setTeams(data);
-        matches_played("");
-        matches_won("");
-        matches_lost("");
-        matches_drawn("");
-        points("");
-      });
+    });
   };
 
   const updateTeamForm = (
-    <div className="scores-form">
+    <div className="d-flex flex-column mx-2 justify-content-center">
+      <h2 className="text-center">Update Team Data</h2>
       <label for="matches_played">Matches played:</label>
       <input
         className="score-input"
@@ -148,7 +143,11 @@ function EachTeam() {
         onChange={(e) => setPoints(e.target.value)}
         value={points}
       />
-      <button type="button" onClick={updateTeamData}>
+      <button
+        type="button"
+        onClick={updateTeamData}
+        className="btn btn-primary my-1"
+      >
         Update Team Scores
       </button>
     </div>
@@ -156,19 +155,11 @@ function EachTeam() {
 
   return (
     <div>
-      EachTeam
       {showEachTeam}
-      <br></br>
-      {updateTeamForm}
-      <ul>
-        <li>Matches played: {matches_played}</li>
-        <li>Matches won: {matches_won}</li>
-        <li>Matches won: {matches_lost}</li>
-        <li>Matches won: {matches_drawn}</li>
-        <li>Points: {points}</li>
-      </ul>
-      <br></br>
-      <AddPlayer teamId={teamId} />
+      <div className="d-flex justify-content-evenly my-5">
+        {updateTeamForm}
+        <AddPlayer teamId={teamId} />
+      </div>
     </div>
   );
 }

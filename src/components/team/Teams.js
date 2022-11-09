@@ -56,7 +56,7 @@ function Teams() {
           )
         })}
 
-      </table> 
+      </table> <br></br>
 
       <NewTeamForm setTeams={setTeams} /> 
         

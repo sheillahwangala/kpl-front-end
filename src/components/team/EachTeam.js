@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import AddPlayer from '../player/AddPlayer'
-import "./each-team.css"
+import AddPlayer from "../player/AddPlayer";
+import "./each-team.css";
 
 function EachTeam() {
   const params = useParams();
-  const [teamId, setTeamId] = useState(Number(params.id))
+  const [teamId, setTeamId] = useState(Number(params.id));
   const [teams, setTeams] = useState([]);
-  const [matches_played, setMatches_played] = useState(0)
-  const [matches_won, setMatches_won] = useState(0)
-  const [matches_lost, setMatches_lost] = useState(0)
-  const [matches_drawn, setMatches_drawn] = useState(0)
-  const [points, setPoints] = useState(0)
-    
+  const [matches_played, setMatches_played] = useState(0);
+  const [matches_won, setMatches_won] = useState(0);
+  const [matches_lost, setMatches_lost] = useState(0);
+  const [matches_drawn, setMatches_drawn] = useState(0);
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     fetch("http://127.0.0.1:9292/teams")
@@ -26,32 +25,43 @@ function EachTeam() {
     (team) =>
       team.id === parseInt(params.id) && (
         <div>
-          <h1>{team.name}</h1>
-          <img src={team.logo} alt="logo" height="100px" />
+          <div>
+            <div>
+              <h1>{team.name}</h1>
+              <img src={team.logo} alt="logo" height="100px" />
+            </div>
+            <div>
+              <h3>Coach: {team.coach}</h3>
+              <p>Points: {team.points}</p>
+              <p>Matches played: {team.matches_played}</p>
+              <p>Matches won: {team.matches_won}</p>
+              <p>Matches lost: {team.matches_lost}</p>
+              <p>Matches drawn: {team.matches_drawn}</p>
+            </div>
+          </div>
+
           {team.players.map((player) => (
             <div>
               <img src={player.image} alt="Img" />
               <h2>{player.name}</h2>
-             <button type="button" onClick = {(e)=>{
-              e.preventDefault()
-              fetch(`http://127.0.0.1:9292/players/${player.id}`, {
-              method: 'DELETE'
-                })
-                  .then(res => res.json())
-                  .then(data => {
-                    // Do some stuff...
-              
-                  })
-                  .catch(err => console.log(err));
-              }}>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  fetch(`http://127.0.0.1:9292/players/${player.id}`, {
+                    method: "DELETE",
+                  });
+                }}
+              >
                 Delete
-                </button><br></br>
+              </button>
+              <br></br>
               <Link to={`/players/${player.id}`}>See Player</Link>
             </div>
           ))}
         </div>
       )
-  ); 
+  );
 
   const updateTeamData = (e) => {
     e.preventDefault();
@@ -65,24 +75,25 @@ function EachTeam() {
         matches_won: matches_won,
         matches_lost: matches_lost,
         matches_drawn: matches_drawn,
-        points: points
+        points: points,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         setTeams(data);
-        matches_played("")
-        matches_won("")
-        matches_lost("")
-        matches_drawn("")
-        points("")
-      })
+        matches_played("");
+        matches_won("");
+        matches_lost("");
+        matches_drawn("");
+        points("");
+      });
   };
 
   const updateTeamForm = (
-    <div className="scores-form" >
-      <label for="matches_played">Matches played:</label>   
-      <input className="score-input"
+    <div className="scores-form">
+      <label for="matches_played">Matches played:</label>
+      <input
+        className="score-input"
         type="number"
         name="matches_played"
         placeholder="matches_played"
@@ -90,7 +101,8 @@ function EachTeam() {
         value={matches_played}
       />
       <label for="matches_won">Matches won:</label>
-      <input className="score-input"
+      <input
+        className="score-input"
         type="number"
         name="matches_won"
         placeholder="matches_won"
@@ -98,7 +110,8 @@ function EachTeam() {
         value={matches_won}
       />
       <label for="matches_lost">Matches lost:</label>
-      <input className="score-input"
+      <input
+        className="score-input"
         type="number"
         name="matches_lost"
         placeholder="matches_lost"
@@ -106,7 +119,8 @@ function EachTeam() {
         value={matches_lost}
       />
       <label for="matches_dawn">Matches drawn:</label>
-       <input className="score-input"
+      <input
+        className="score-input"
         type="number"
         name="matches_drawn"
         placeholder="matches_drawn"
@@ -114,7 +128,8 @@ function EachTeam() {
         value={matches_drawn}
       />
       <label for="points">Points:</label>
-      <input className="score-input"
+      <input
+        className="score-input"
         type="number"
         name="points"
         placeholder="points"
@@ -127,13 +142,12 @@ function EachTeam() {
     </div>
   );
 
-
   return (
     <div>
       EachTeam
       {showEachTeam}
       <br></br>
-      {updateTeamForm} 
+      {updateTeamForm}
       <ul>
         <li>Matches played: {matches_played}</li>
         <li>Matches won: {matches_won}</li>
@@ -142,7 +156,7 @@ function EachTeam() {
         <li>Points: {points}</li>
       </ul>
       <br></br>
-      <AddPlayer teamId={teamId}/>
+      <AddPlayer teamId={teamId} />
     </div>
   );
 }

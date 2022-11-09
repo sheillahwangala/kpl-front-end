@@ -1,9 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import EachTeam from "./EachTeam";
 import NewTeamForm from "./NewTeamForm";
-
 import "./team.css";
 
 function Teams() {

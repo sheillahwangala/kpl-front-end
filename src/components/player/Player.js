@@ -19,12 +19,26 @@ function Player() {
   const displayPlayer = players.map(
     (player) =>
       player.id === Number(params.id) && (
-        <div>
-          <h4> Name: {player.name}</h4>
-          <h5>Position: {player.position}</h5>
-          <p>Goals: {player.goals}</p>
-          <p>Assists: {player.assists}</p>
+        <div >
+          <div>
+          <img src={player.image} alt="Img" height="200px" />
+         
+          </div>
+
+          <div className="first">
+            <h4> Name: {player.name}</h4>
+            <h5>Position: {player.position}</h5>
+
+          </div>
+          <div className="second">
+            <p>Goals: {player.goals}</p>
+            <p>Assists: {player.assists}</p>
+          </div>
+          
+          
+          
         </div>
+        
       )
   );
 
@@ -49,24 +63,35 @@ function Player() {
   };
 
   const updatePlayerForm = (
-    <div>
-      <input
-        type="number"
-        name="goals"
-        placeholder="goals"
-        onChange={(e) => setGoals(e.target.value)}
-        value={goals}
-      />
-      <input
-        type="number"
-        name="assists"
-        placeholder="assists"
-        onChange={(e) => setAssists(e.target.value)}
-        value={assists}
-      />
-      <button type="button" onClick={updatePlayer}>
-        Update Player
-      </button>
+    <div >
+      <div >
+        <h1 className="text">Update goals</h1>
+        <input className="third"
+          type="number"
+          name="goals"
+          placeholder="goals"
+          onChange={(e) => setGoals(e.target.value)}
+          value={goals}
+        />
+        <h1 className="text">Update assists</h1>
+        <input className="third"
+          type="number"
+          name="assists"
+          placeholder="assists"
+          onChange={(e) => setAssists(e.target.value)}
+          value={assists}
+        />
+
+      </div>
+
+      <div >
+        <button className="buttons" type="button" onClick={updatePlayer}>
+          Update Player
+        </button>
+
+      </div>
+      
+     
     </div>
   );
 

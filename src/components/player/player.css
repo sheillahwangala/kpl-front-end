@@ -1,3 +1,49 @@
+
+*{
+    background-color:white;
+    
+}
+.first{
+    font-size: 30px;
+    margin-left: 5rem;
+    
+}
+.text{
+    font-size: 20px;
+    margin-left: 45rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.second{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 75rem;
+    margin-top: 2rem;
+    
+}
+.third{
+    border-radius: 2rem;
+    display: block;
+    margin-left: 45rem;
+    justify-content: space-between;
+    background-color: plum;
+    width: 19rem;
+    height: 3rem;
+    margin-top: 3rem;
+    
+}
+.buttons{
+    border-radius: 10rem;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+    color: antiquewhite;
+    margin-left: 50rem;
+    margin-top: 3rem;
+    width: 10rem;
+    height: 3rem;
+}    
+
 .playerStats h2{
     display: block;
     text-align: center;
@@ -19,8 +65,9 @@ table tr th{
 }
 table tr:nth-child(1){
     background-color: #8F6CC6;
-
 }
+
+
 table, td, th {
     border: 1px solid;
   }

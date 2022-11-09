@@ -78,7 +78,11 @@ function EachTeam() {
               ))}
             </div>
           ) : (
-            <div>no players</div>
+            <div>
+              <h2 className="text-center text-decoration-underline">
+                No players for {team.name}
+              </h2>
+            </div>
           )}
         </div>
       )

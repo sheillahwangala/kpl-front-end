@@ -22,7 +22,9 @@ function Player() {
         <div >
           <div>
           <img src={player.image} alt="Img" height="200px" />
+         
           </div>
+
           <div className="first">
             <h4> Name: {player.name}</h4>
             <h5>Position: {player.position}</h5>
@@ -63,6 +65,7 @@ function Player() {
   const updatePlayerForm = (
     <div >
       <div >
+        <h1 className="text">Update goals</h1>
         <input className="third"
           type="number"
           name="goals"
@@ -70,6 +73,7 @@ function Player() {
           onChange={(e) => setGoals(e.target.value)}
           value={goals}
         />
+        <h1 className="text">Update assists</h1>
         <input className="third"
           type="number"
           name="assists"

@@ -21,7 +21,42 @@ function Players() {
       <Link to={`/players/${player.id}`}>See Player</Link>
     </div>
   ));
-  return <div>{displayPlayers}</div>;
+  return (
+    // <div>{displayPlayers}</div>;
+    <div className="container" >
+    {/* {displayTeams} */}
+    <hr></hr>
+    <table className="table table-striped" >
+      <tr className="classHeader" >
+        <th>#</th>
+        <th>Player Name</th>
+        <th>Image</th>
+        <th>Position</th>
+        <th>Goals</th>
+        <th>Assists</th>
+      </tr>
+      {teams.map((team, key) => {
+        return (
+          <tr key={team.id} >
+            <td className="team-name" >
+              <Link className="text-decoration-none text-dark" to={`/teams/${team.id}`}>{team.name}</Link>
+            </td>
+            <td>
+              <img src={team.logo} alt="logo" height="100px" />
+            </td>
+            <td>{team.matches_played}</td>
+            <td>{team.matches_won}</td>
+            <td>{team.matches_drawn}</td>
+            <td>{team.matches_lost}</td>
+            <td>{team.points}</td>
+          </tr>
+        )
+      })}
+
+    </table> <br></br>
+  </div>
+  )
+  
 }
 
 export default Players;

@@ -49,7 +49,7 @@ function Player() {
   };
 
   const updatePlayerForm = (
-    <div>
+    <div className="update">
       <input
         type="number"
         name="goals"

@@ -1,6 +1,6 @@
 *{
     background-color:white;
-    margin: 5px;
+    text-align: center;
 }
 h4{
     font-size: 25px;
@@ -20,6 +20,7 @@ p{
     justify-content: center;
  }
  .update div{
-    width
+    width: 100px;
+    height: 100px;
  }
 

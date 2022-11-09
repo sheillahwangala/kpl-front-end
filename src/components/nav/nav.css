@@ -1,3 +1,7 @@
-nav a {
-  margin: 2px;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  /* box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px; */
+}
 }

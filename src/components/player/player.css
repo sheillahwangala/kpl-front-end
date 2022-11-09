@@ -1,24 +1,27 @@
-/* .table_for_player{
-    padding: 1%;
-    color: white;
-    min-width: 170%;
-}
-.table_for_player table {
-    border: 2px solid black;
-    text-align: center;
-    background-color: rgb(79, 99, 19);
-} */
-.playerStats{
-    justify-content: center;
-    margin: 0 5%;
-}
 .playerStats h2{
+    display: block;
     text-align: center;
-    margin:1% 0 0 0
+    margin-top: 2%;
+    margin-bottom: 0px;
 }
-.container{
-    border: 1px solid black;
-    padding: 0%;
+table{
     text-align: center;
+    margin: 0 auto;
+    box-shadow: 1px 1px 2px;
+    border-collapse: collapse;
 }
+table tr th{
+    padding: 0 20px;
+    justify-content: flex-start;
+}
+.imgS{ 
+    border-radius: 50%;
+}
+table tr:nth-child(1){
+    background-color: #8F6CC6;
+
+}
+table, td, th {
+    border: 1px solid;
+  }
 

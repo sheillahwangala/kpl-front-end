@@ -19,11 +19,19 @@ function Player() {
   const displayPlayer = players.map(
     (player) =>
       player.id === Number(params.id) && (
-        <div className="left" >
-          <h4> Name: {player.name}</h4>
-          <h5>Position: {player.position}</h5>
-          <p>Goals: {player.goals}</p>
-          <p>Assists: {player.assists}</p>
+        <div >
+          <div className="first">
+            <h4> Name: {player.name}</h4>
+            <h5>Position: {player.position}</h5>
+
+          </div>
+          <div className="second">
+            <p>Goals: {player.goals}</p>
+            <p>Assists: {player.assists}</p>
+          </div>
+          
+          
+          
         </div>
         
       )
@@ -51,24 +59,32 @@ function Player() {
 
   const updatePlayerForm = (
     <div >
-      <div></div>
-      <input className="inputs"
-        type="number"
-        name="goals"
-        placeholder="goals"
-        onChange={(e) => setGoals(e.target.value)}
-        value={goals}
-      />
-      <input className="inputs"
-        type="number"
-        name="assists"
-        placeholder="assists"
-        onChange={(e) => setAssists(e.target.value)}
-        value={assists}
-      />
-      <button className="buttons" type="button" onClick={updatePlayer}>
-        Update Player
-      </button>
+      <div className="third">
+        <input 
+          type="number"
+          name="goals"
+          placeholder="goals"
+          onChange={(e) => setGoals(e.target.value)}
+          value={goals}
+        />
+        <input 
+          type="number"
+          name="assists"
+          placeholder="assists"
+          onChange={(e) => setAssists(e.target.value)}
+          value={assists}
+        />
+
+      </div>
+
+      <div className="buttons">
+        <button type="button" onClick={updatePlayer}>
+          Update Player
+        </button>
+
+      </div>
+      
+     
     </div>
   );
 

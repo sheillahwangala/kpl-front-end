@@ -1,4 +1,4 @@
-.table_for_player{
+/* .table_for_player{
     padding: 1%;
     color: white;
     min-width: 170%;
@@ -7,5 +7,18 @@
     border: 2px solid black;
     text-align: center;
     background-color: rgb(79, 99, 19);
+} */
+.playerStats{
+    justify-content: center;
+    margin: 0 5%;
+}
+.playerStats h2{
+    text-align: center;
+    margin:1% 0 0 0
+}
+.container{
+    border: 1px solid black;
+    padding: 0%;
+    text-align: center;
 }
 

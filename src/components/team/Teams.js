@@ -23,44 +23,47 @@ function Teams() {
   // ));
 
   return (
-    <div className="container" > 
-      {/* {displayTeams} */}     
-      <hr></hr>
-      <table className="table table-striped" >
-        <tr className="classHeader" >
-          <th>Team Name</th>
-          <th>Team Logo</th>
-          <th>Games Played</th>
-          <th>Won</th>
-          <th>Drawn</th>
-          <th>Lost</th>
-          <th>Points</th>
-        </tr>
-        {teams.map((team, key) => {
-          return (
-            <tr key={team.id} >
-              <td className="teamName" >
-              <Link to={`/teams/${team.id}`}>{team.name}</Link>
-              </td>
-              <td>
-              <img src={team.logo} alt="logo" height="100px" />
-              </td>
-              <td>{team.matches_played}</td>
-              <td>{team.matches_won}</td>
-              <td>{team.matches_drawn}</td>
-              <td>{team.matches_lost}</td>
-              <td>{team.points}</td>
-            </tr>
-          )
-        })}
+    <div className="home-page" >
+      <div className="container" >
+        {/* {displayTeams} */}
+        <hr></hr>
+        <table className="table table-striped" >
+          <tr className="classHeader" >
+            <th>Team Name</th>
+            <th>Team Logo</th>
+            <th>Games Played</th>
+            <th>Won</th>
+            <th>Drawn</th>
+            <th>Lost</th>
+            <th>Points</th>
+          </tr>
+          {teams.map((team, key) => {
+            return (
+              <tr key={team.id} >
+                <td className="team-name" >
+                  <Link className="text-decoration-none text-dark" to={`/teams/${team.id}`}>{team.name}</Link>
+                </td>
+                <td>
+                  <img src={team.logo} alt="logo" height="100px" />
+                </td>
+                <td>{team.matches_played}</td>
+                <td>{team.matches_won}</td>
+                <td>{team.matches_drawn}</td>
+                <td>{team.matches_lost}</td>
+                <td>{team.points}</td>
+              </tr>
+            )
+          })}
 
-      </table> <br></br>
+        </table> <br></br>
+      </div>
 
-      <NewTeamForm setTeams={setTeams} /> 
-        
+      <div className="add-team" >
+        <h3>Add Team</h3>
+        <NewTeamForm setTeams={setTeams} />
+      </div>
+
     </div>
-
-
   );
 }
 

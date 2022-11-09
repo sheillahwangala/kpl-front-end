@@ -23,11 +23,11 @@ function Teams() {
   // ));
 
   return (
-    <div>
+    <div className="container" > 
       {/* {displayTeams} */}     
-
+      <hr></hr>
       <table className="table table-striped" >
-        <tr>
+        <tr className="classHeader" >
           <th>Team Name</th>
           <th>Team Logo</th>
           <th>Games Played</th>
@@ -39,7 +39,7 @@ function Teams() {
         {teams.map((team, key) => {
           return (
             <tr key={team.id} >
-              <td>
+              <td className="teamName" >
               <Link to={`/teams/${team.id}`}>{team.name}</Link>
               </td>
               <td>

@@ -20,6 +20,9 @@ function Player() {
     (player) =>
       player.id === Number(params.id) && (
         <div >
+          <div>
+          <img src={player.image} alt="Img" height="200px" />
+          </div>
           <div className="first">
             <h4> Name: {player.name}</h4>
             <h5>Position: {player.position}</h5>
@@ -59,15 +62,15 @@ function Player() {
 
   const updatePlayerForm = (
     <div >
-      <div className="third">
-        <input 
+      <div >
+        <input className="third"
           type="number"
           name="goals"
           placeholder="goals"
           onChange={(e) => setGoals(e.target.value)}
           value={goals}
         />
-        <input 
+        <input className="third"
           type="number"
           name="assists"
           placeholder="assists"
@@ -77,8 +80,8 @@ function Player() {
 
       </div>
 
-      <div className="buttons">
-        <button type="button" onClick={updatePlayer}>
+      <div >
+        <button className="buttons" type="button" onClick={updatePlayer}>
           Update Player
         </button>
 

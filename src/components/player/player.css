@@ -1,12 +1,12 @@
-.first {
-  font-size: 30px;
-  margin-left: 5rem;
-}
-.text {
-  font-size: 20px;
-  margin-left: 45rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+
+/* *{
+    background-color:white;
+    
+} */
+.first{
+    font-size: 30px;
+    margin-left: 5rem;
+    
 }
 .second {
   font-size: 25px;

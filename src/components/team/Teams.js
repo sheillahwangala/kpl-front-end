@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NewTeamForm from "./NewTeamForm";
 import "./team.css";
 
 function Teams() {
@@ -53,6 +52,9 @@ function Teams() {
           })}
         </table>{" "}
       </div>
+
+     
+
     </div>
   );
 }

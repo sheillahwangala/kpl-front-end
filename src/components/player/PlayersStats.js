@@ -45,28 +45,31 @@ function PlayersStats() {
     </tr>
   ));
   return (
-    <div className="playerStats">
-      <h2>Top Goalscorers</h2>
-      <table>
-        <tr>
-          <th>Name of player</th>
-          <th>Image</th>
-          <th>Team</th>
-          <th>Goals</th>
-        </tr>
-        {playerStatisticsGoals}
-      </table>
-      <h2 className="text-decoration-underline">Top Assisters</h2>
-      <table>
-        <tr>
-          <th>Name of player</th>
-          <th>Image</th>
-          <th>Team</th>
-          <th>Assists</th>
-        </tr>
-
-        {playerStatisticsAssits}
-      </table>
+    <div className="d-flex flex-row justify-content-evenly">
+      <div className="playerStats">
+        <h2 className="text-decoration-underline my-2">Top Goalscorers</h2>
+        <table>
+          <tr>
+            <th>Name of player</th>
+            <th>Image</th>
+            <th>Team</th>
+            <th>Goals</th>
+          </tr>
+          {playerStatisticsGoals}
+        </table>
+      </div>
+      <div className="playerStats">
+        <h2 className="text-decoration-underline my-2">Top Assisters</h2>
+        <table>
+          <tr>
+            <th>Name of player</th>
+            <th>Image</th>
+            <th>Team</th>
+            <th>Assists</th>
+          </tr>
+          {playerStatisticsAssits}
+        </table>
+      </div>
     </div>
   );
 }

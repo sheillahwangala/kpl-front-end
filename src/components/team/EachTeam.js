@@ -25,10 +25,15 @@ function EachTeam() {
     (team) =>
       team.id === parseInt(params.id) && (
         <div>
-          <div>
-            <div>
+          <div className="d-flex justify-content-evenly">
+            <div className="d-flex flex-column justify-content-center">
               <h1>{team.name}</h1>
-              <img src={team.logo} alt="logo" height="100px" />
+              <img
+                className="rounded-circle"
+                src={team.logo}
+                alt="logo"
+                height="200px"
+              />
             </div>
             <div>
               <h3>Coach: {team.coach}</h3>
@@ -39,6 +44,8 @@ function EachTeam() {
               <p>Matches drawn: {team.matches_drawn}</p>
             </div>
           </div>
+
+          <h2 className="text-center text-decoration-underline">Players for {team.name}</h2>
 
           {team.players.map((player) => (
             <div>

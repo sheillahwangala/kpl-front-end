@@ -19,12 +19,13 @@ function Player() {
   const displayPlayer = players.map(
     (player) =>
       player.id === Number(params.id) && (
-        <div>
+        <div className="left" >
           <h4> Name: {player.name}</h4>
           <h5>Position: {player.position}</h5>
           <p>Goals: {player.goals}</p>
           <p>Assists: {player.assists}</p>
         </div>
+        
       )
   );
 
@@ -49,15 +50,16 @@ function Player() {
   };
 
   const updatePlayerForm = (
-    <div className="update">
-      <input
+    <div >
+      <div></div>
+      <input className="inputs"
         type="number"
         name="goals"
         placeholder="goals"
         onChange={(e) => setGoals(e.target.value)}
         value={goals}
       />
-      <input
+      <input className="inputs"
         type="number"
         name="assists"
         placeholder="assists"

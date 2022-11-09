@@ -2,31 +2,16 @@
     background-color:white;
     
 }
-.left{
-    font-size: 25px;
-    margin-left: 50px;
-}
-.inputs{
-    display: block;
-    justify-content: space-around;
-    align-items: center;
+.first{
+    font-size: 30px;
+    margin-left: 5rem;
     
 }
-
-
-
- 
-
-
- 
- .buttons{
-    background-color:purple;
-    border-radius: 10rem;
-    color: white;
-    height:40px;
-    width: 130px;
-    margin-top: 2rem;
- 
-   
- }
+.second{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 50rem;
+    
+}
+.third
 

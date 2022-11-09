@@ -7,10 +7,17 @@
     margin-left: 5rem;
     
 }
+.text{
+    font-size: 20px;
+    margin-left: 45rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .second{
     font-size: 25px;
     font-weight: bolder;
     margin-left: 75rem;
+    margin-top: 2rem;
     
 }
 .third{
@@ -19,7 +26,7 @@
     margin-left: 45rem;
     justify-content: space-between;
     background-color: plum;
-    width: 15rem;
+    width: 19rem;
     height: 3rem;
     margin-top: 3rem;
     
@@ -33,6 +40,7 @@
     margin-left: 50rem;
     margin-top: 3rem;
     width: 10rem;
-    height: 4rem;
+    height: 3rem;
+    
 }
 

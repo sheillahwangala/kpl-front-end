@@ -10,13 +10,29 @@
 .second{
     font-size: 25px;
     font-weight: bolder;
-    margin-left: 50rem;
+    margin-left: 75rem;
     
 }
 .third{
+    border-radius: 2rem;
+    display: block;
+    margin-left: 45rem;
+    justify-content: space-between;
+    background-color: plum;
+    width: 15rem;
+    height: 3rem;
+    margin-top: 3rem;
     
 }
 .buttons{
     border-radius: 10rem;
+    align-items: center;
+    justify-content: center;
+    background-color: purple;
+    color: antiquewhite;
+    margin-left: 50rem;
+    margin-top: 3rem;
+    width: 10rem;
+    height: 4rem;
 }
 

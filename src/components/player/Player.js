@@ -7,8 +7,8 @@ function Player() {
   const params = useParams();
   console.log(params.id);
   const [players, setPlayers] = useState([]);
-  const [goals, setGoals] = useState("")
-  const [assists, setAssists] = useState("")
+  const [goals, setGoals] = useState(0);
+  const [assists, setAssists] = useState(0);
 
   useEffect(() => {
     fetch("http://127.0.0.1:9292/players")
@@ -23,7 +23,7 @@ function Player() {
           <h4> Name: {player.name}</h4>
           <h5>Position: {player.position}</h5>
           <p>Goals: {player.goals}</p>
-          <p>Assists: {player.assists}</p>        
+          <p>Assists: {player.assists}</p>
         </div>
       )
   );
@@ -37,15 +37,15 @@ function Player() {
       },
       body: JSON.stringify({
         goals: goals,
-        assists: assists
+        assists: assists,
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         setPlayers(data);
-        setGoals("");
-        setAssists("");
-      })
+        setAssists(0);
+        setGoals(0);
+      });
   };
 
   const updatePlayerForm = (
@@ -70,13 +70,12 @@ function Player() {
     </div>
   );
 
-
   return (
-      <div>
-        <div>{displayPlayer}</div>
-        {updatePlayerForm}     
-      </div>
-  )
+    <div>
+      <div>{displayPlayer}</div>
+      {updatePlayerForm}
+    </div>
+  );
 }
 
 export default Player;

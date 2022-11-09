@@ -1,25 +1,37 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./nav.css"
-import {FaBars} from 'react-icons/fa'
-import {ImCross} from 'react-icons/im'
+import "./nav.css";
+import { FaBars } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 
-function Nav() {  
-  const [mobile, setMobile] = useState(false)
+function Nav() {
+  const [mobile, setMobile] = useState(false);
   return (
     <nav className="nav__bar">
-      {/* <div className="container"> */}
+      <Link to="/" className="nav__logo text-decoration-none text-light">
         <h3 className="nav__logo">⚽ Kenyan Premeir League ⚽</h3>
-        <ul className={mobile ? "nav__links__mobile" : "nav__links"} onClick={()=>setMobile(false)}>
-          <Link to="/"><li>Teams</li></Link>
-          <Link to="/team-stats"><li>Team stats</li></Link>
-          <Link to="/players"><li>Players</li></Link>
-          <Link to="players-stats"><li>Players Stats</li></Link>
-        </ul>
-        <button className="mobile__menu__icon" onClick={()=> setMobile(!mobile)}> 
-          {mobile? <ImCross/> :<FaBars/>}
-        </button>
-      {/* </div> */}
+      </Link>
+
+      <ul
+        className={mobile ? "nav__links__mobile" : "nav__links"}
+        onClick={() => setMobile(false)}
+      >
+        <Link to="/" className="text-decoration-none">
+          <li>Teams</li>
+        </Link>
+        <Link to="/team-stats" className="text-decoration-none">
+          <li>Team stats</li>
+        </Link>
+        <Link to="/players" className="text-decoration-none">
+          <li>Players</li>
+        </Link>
+        <Link to="players-stats" className="text-decoration-none">
+          <li>Players Stats</li>
+        </Link>
+      </ul>
+      <button className="mobile__menu__icon" onClick={() => setMobile(!mobile)}>
+        {mobile ? <ImCross /> : <FaBars />}
+      </button>
     </nav>
   );
 }

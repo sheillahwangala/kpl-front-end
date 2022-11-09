@@ -6,3 +6,8 @@
     padding: 20px;
     border: 4%;  
 }
+.table table-striped {
+    padding: 10px;
+    max-width: 90%;
+    box-shadow: 1px -1px 10px 1px #1E90FF;
+}

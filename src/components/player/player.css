@@ -2,40 +2,31 @@
     background-color:white;
     
 }
-h4{
+.left{
     font-size: 25px;
+    margin-left: 50px;
 }
-h5{
-    font-size: 20px;
+.inputs{
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    
+}
 
-}
-p{
-    font-size: 25px;
-
-}
 
 
  
- .update div{
-    width: 100px;
-    height: 100px;
- }
- input{
-    max-height: 10rem;
-    max-width: 30rem;
-    background-color: blueviolet;
-    display: block;
-    align-items: center;
-    justify-content: space-around;
-    max-height: 50em;
-    max-width: 20rem;
- }
+
+
+ 
  .buttons{
     background-color:purple;
     border-radius: 10rem;
     color: white;
     height:40px;
     width: 130px;
+    margin-top: 2rem;
+ 
    
  }
 

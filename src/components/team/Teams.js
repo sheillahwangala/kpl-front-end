@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NewTeamForm from "./NewTeamForm";
 import "./team.css";
 
 function Teams() {
@@ -58,10 +57,10 @@ function Teams() {
         </table> <br></br>
       </div>
 
-      <div className="add-team" >
+      {/* <div className="add-team" >
         <h3>Add Team</h3>
         <NewTeamForm setTeams={setTeams} />
-      </div>
+      </div> */}
 
     </div>
   );

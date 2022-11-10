@@ -14,38 +14,37 @@ function TeamStats() {
   }, []);
 
   const displayTopTeams = topTeams.map((topTeam, index) => (
-    <div
-      key={topTeam.id}
-      className=" border border-dark text-center p-2 d-flex flex-column rounded top-team-div mx-5  "
-    >
+    <div key={topTeam.id} className="top-player-card" >
       <h1>{index + 1}</h1>
-      <div>
-        <Link
-          className="w-100 text-decoration-none text-dark"
-          to={`/teams/${topTeam.id}`}
-        >
-          <h2>{topTeam.name}</h2>
-        </Link>
-        <img src={topTeam.logo} alt="logo" height="200px" />
-        <span className="text-center">Coach: {topTeam.coach}</span>
-        <div>
-          <span className="text-center">Points: {topTeam.points}</span>
-        </div>
+
+      <div className="top-team-logo" >
+         
+          <Link to={`/teams/${topTeam.id}`}>
+            <h3>{topTeam.name}</h3>
+          </Link>
+        <img src={topTeam.logo} alt="logo" height="250px" />
+      </div>
+
+      <div className="top-attr" >
+        <h6 >Coach: {topTeam.coach}</h6>       
+        <h6>Points: {topTeam.points}</h6>
+  
 
         {topTeam.players.map((player) => (
           <div key={player.id}>
-            <h5>{player.goals}</h5>
-            <p>{player.name}</p>
+            <h6>Goals: {player.goals}</h6>
+            <h6>Scorer: {player.name}</h6>
           </div>
         ))}
       </div>
     </div>
+  
   ));
 
   return (
     <div>
-      <h2 className="text-decoration-underline my-2">Top Scoring Teams</h2>
-      <div className="d-flex flex-wrap ">{displayTopTeams}</div>
+      <h2 className="top-title">Top Teams Statistics</h2><hr></hr>
+      <div className="all-cards" >{displayTopTeams}</div>
     </div>
   );
 }

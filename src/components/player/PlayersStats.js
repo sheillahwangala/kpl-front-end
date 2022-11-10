@@ -21,7 +21,7 @@ function PlayersStats() {
       <td>
         <img src={playerGoal.image} className="imgS" alt="logo" height="50px" />
       </td>
-      <td>{playerGoal.team.name}</td>
+      <td>{playerGoal.team_id}</td>
       <td>
         <h5>{playerGoal.goals} </h5>
       </td>
@@ -38,7 +38,7 @@ function PlayersStats() {
           height="50px"
         />
       </td>
-      <td>{playerAsssist.team.name}</td>
+      <td>{playerAsssist.team_id}</td>
       <td>
         <h5>{playerAsssist.assists}</h5>
       </td>

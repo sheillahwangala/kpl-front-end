@@ -35,7 +35,7 @@ function TeamStats() {
 
   return (
     <div>
-      TeamStats
+      <h2 className="text-decoration-underline my-2">Top Scoring Teams</h2>
       <div className="d-flex justify-content-evenly">{displayTopTeams}</div>
     </div>
   );

@@ -1,65 +1,21 @@
-
-/* *{
-    background-color:white;
-    
-} */
-.first{
-    font-size: 30px;
-    margin-left: 5rem;
-    
-}
-.second {
-  font-size: 25px;
-  font-weight: bolder;
-  margin-left: 75rem;
-  margin-top: 2rem;
-}
-.third {
-  border-radius: 2rem;
-  display: block;
-  margin-left: 45rem;
-  justify-content: space-between;
-  background-color: plum;
-  width: 19rem;
-  height: 3rem;
-  margin-top: 3rem;
-}
-.buttons {
-  border-radius: 10rem;
-  align-items: center;
-  justify-content: center;
-  background-color: purple;
-  color: antiquewhite;
-  margin-left: 50rem;
-  margin-top: 3rem;
-  width: 10rem;
-  height: 3rem;
-}
-
-.playerStats h2 {
-  display: block;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 0px;
-}
-table {
+.player-stats-table {
   text-align: center;
   margin: 0 auto;
   box-shadow: 1px 1px 2px;
   border-collapse: collapse;
 }
-table tr th {
+.player-stats-table tr th {
   padding: 0 20px;
   justify-content: flex-start;
 }
 .imgS {
   border-radius: 50%;
 }
-table tr:nth-child(1) {
+.player-stats-table tr:nth-child(1) {
   background-color: #8f6cc6;
 }
 
-table,
+.player-stats-table,
 td,
 th {
   border: 1px solid;

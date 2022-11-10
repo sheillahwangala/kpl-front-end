@@ -48,7 +48,7 @@ function PlayersStats() {
     <div className="d-flex flex-row justify-content-evenly">
       <div className="playerStats">
         <h2 className="text-decoration-underline my-2">Top Goalscorers</h2>
-        <table>
+        <table className="player-stats-table">
           <tr>
             <th>Name of player</th>
             <th>Image</th>
@@ -60,7 +60,7 @@ function PlayersStats() {
       </div>
       <div className="playerStats">
         <h2 className="text-decoration-underline my-2">Top Assisters</h2>
-        <table>
+        <table className="player-stats-table">
           <tr>
             <th>Name of player</th>
             <th>Image</th>

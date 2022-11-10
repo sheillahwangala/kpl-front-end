@@ -19,26 +19,17 @@ function Player() {
   const displayPlayer = players.map(
     (player) =>
       player.id === Number(params.id) && (
-        <div >
+        <div className="d-flex justify-content-evenly">
           <div>
-          <img src={player.image} alt="Img" height="200px" />
-         
+            <img src={player.image} alt="Img" height="300px" />
+            <h4 className="text-center">{player.name}</h4>
+            <h4 className="text-center">Position: {player.position}</h4>
           </div>
-
-          <div className="first">
-            <h4> Name: {player.name}</h4>
-            <h5>Position: {player.position}</h5>
-
-          </div>
-          <div className="second">
+          <div className="my-4">
             <p>Goals: {player.goals}</p>
             <p>Assists: {player.assists}</p>
           </div>
-          
-          
-          
         </div>
-        
       )
   );
 
@@ -63,42 +54,38 @@ function Player() {
   };
 
   const updatePlayerForm = (
-    <div >
-      <div >
-        <h1 className="text">Update goals</h1>
-        <input className="third"
-          type="number"
-          name="goals"
-          placeholder="goals"
-          onChange={(e) => setGoals(e.target.value)}
-          value={goals}
-        />
-        <h1 className="text">Update assists</h1>
-        <input className="third"
-          type="number"
-          name="assists"
-          placeholder="assists"
-          onChange={(e) => setAssists(e.target.value)}
-          value={assists}
-        />
+    <div className="d-flex flex-column w-25">
+      <label>Goals</label>
+      <input
+        className="third"
+        type="number"
+        name="goals"
+        placeholder="goals"
+        onChange={(e) => setGoals(e.target.value)}
+        value={goals}
+      />
+      <label>Assists</label>
 
-      </div>
+      <input
+        className="third"
+        type="number"
+        name="assists"
+        placeholder="assists"
+        onChange={(e) => setAssists(e.target.value)}
+        value={assists}
+      />
 
-      <div >
-        <button className="buttons" type="button" onClick={updatePlayer}>
-          Update Player
-        </button>
-
-      </div>
-      
-     
+      <button className="my-2 btn btn-success" onClick={updatePlayer}>
+        Update
+      </button>
     </div>
   );
 
   return (
     <div>
       <div>{displayPlayer}</div>
-      {updatePlayerForm}
+      <h2 className="text-center text-decoration-underline">Update Player Stats</h2>
+      <div className="d-flex justify-content-center">{updatePlayerForm}</div>
     </div>
   );
 }

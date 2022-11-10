@@ -1,4 +1,8 @@
 import React from "react";
+import './UserLogin.css';
+import profile from "./../images/avatar.png";
+import email from "./../images/email.jpg";
+import pass from "./../images/pass.png";
 
 function UserLogin({ name, setName, addAUser }) {
   return (

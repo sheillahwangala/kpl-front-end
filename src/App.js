@@ -10,7 +10,7 @@ import UserLogin from "./components/userlogin/UserLogin";
 import Players from "./components/player/Players";
 import NewTeamForm from "./components/team/NewTeamForm";
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [signedInUser, setSignedInUser] = useState("");
   const [name, setName] = useState("");
   const addAUser = () => {

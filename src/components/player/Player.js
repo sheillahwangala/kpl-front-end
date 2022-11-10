@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./player.css";
 
-function Player() {
+function Player({ signedInUser }) {
   const params = useParams();
   console.log(params.id);
   const [players, setPlayers] = useState([]);
@@ -19,15 +19,15 @@ function Player() {
   const displayPlayer = players.map(
     (player) =>
       player.id === Number(params.id) && (
-        <div className="d-flex justify-content-evenly">
+        <div className="d-flex justify-content-evenly my-2">
           <div>
-            <img src={player.image} alt="Img" height="300px" />
+            <img src={player.image} alt="Img" height="300px" className="rounded" />
             <h4 className="text-center">{player.name}</h4>
             <h4 className="text-center">Position: {player.position}</h4>
           </div>
           <div className="my-4">
-            <p>Goals: {player.goals}</p>
-            <p>Assists: {player.assists}</p>
+            <h2>Goals: {player.goals}</h2>
+            <h2>Assists: {player.assists}</h2>
           </div>
         </div>
       )
@@ -55,6 +55,9 @@ function Player() {
 
   const updatePlayerForm = (
     <div className="d-flex flex-column w-25">
+      <h2 className="text-center text-decoration-underline">
+        Update Player Stats
+      </h2>
       <label>Goals</label>
       <input
         className="third"
@@ -84,8 +87,9 @@ function Player() {
   return (
     <div>
       <div>{displayPlayer}</div>
-      <h2 className="text-center text-decoration-underline">Update Player Stats</h2>
-      <div className="d-flex justify-content-center">{updatePlayerForm}</div>
+      {signedInUser === "admin" && (
+        <div className="d-flex justify-content-center">{updatePlayerForm}</div>
+      )}
     </div>
   );
 }

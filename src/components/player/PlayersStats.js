@@ -33,7 +33,7 @@ function PlayersStats() {
       <td>
         <img
           src={playerAsssist.image}
-          className="imgS"
+          className="rounded-circle "
           alt="logo"
           height="50px"
         />

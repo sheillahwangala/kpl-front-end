@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./team.css";
 
-function Teams() {
+function Teams({ signedInUser }) {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ function Teams() {
   return (
     <div className="home-page">
       <div className="container">
+        {signedInUser ? <h1>Welcome {signedInUser}</h1> : null}
         <hr></hr>
         <table className="table table-striped">
           <tr className="classHeader ">
@@ -52,9 +53,6 @@ function Teams() {
           })}
         </table>{" "}
       </div>
-
-     
-
     </div>
   );
 }

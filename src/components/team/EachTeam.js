@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import AddPlayer from "../player/AddPlayer";
 import "./each-team.css";
 
-function EachTeam() {
+function EachTeam({ signedInUser }) {
   const params = useParams();
   const [teamId, setTeamId] = useState(Number(params.id));
   const [teams, setTeams] = useState([]);
@@ -62,18 +62,20 @@ function EachTeam() {
                     <h2 className="text-center">{player.name}</h2>
                   </Link>
 
-                  <button
-                    type="button"
-                    className="btn btn-danger btn-sm"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      fetch(`http://127.0.0.1:9292/players/${player.id}`, {
-                        method: "DELETE",
-                      });
-                    }}
-                  >
-                    Delete
-                  </button>
+                  {signedInUser === "admin" && (
+                    <button
+                      type="button"
+                      className="btn btn-danger btn-sm"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        fetch(`http://127.0.0.1:9292/players/${player.id}`, {
+                          method: "DELETE",
+                        });
+                      }}
+                    >
+                      Delete
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -153,6 +155,7 @@ function EachTeam() {
         onChange={(e) => setPoints(e.target.value)}
         value={points}
       />
+
       <button
         type="button"
         onClick={updateTeamData}
@@ -166,10 +169,13 @@ function EachTeam() {
   return (
     <div>
       {showEachTeam}
-      <div className="d-flex justify-content-evenly my-5">
-        {updateTeamForm}
-        <AddPlayer teamId={teamId} />
-      </div>
+
+      {signedInUser === "admin" && (
+        <div className="d-flex  justify-content-evenly">
+          {updateTeamForm}
+          <AddPlayer teamId={teamId} />
+        </div>
+      )}
     </div>
   );
 }

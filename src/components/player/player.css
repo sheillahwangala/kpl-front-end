@@ -8,9 +8,7 @@
   padding: 0 20px;
   justify-content: flex-start;
 }
-.imgS {
-  border-radius: 50%;
-}
+
 .player-stats-table tr:nth-child(1) {
   background-color: #8f6cc6;
 }

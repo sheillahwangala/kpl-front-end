@@ -26,7 +26,7 @@ function TeamStats() {
         >
           <h2>{topTeam.name}</h2>
         </Link>
-        <img src={topTeam.logo} alt="logo" height="200px" />
+        <img src={topTeam.logo} alt="logo" height="100px" />
         <span className="text-center">Coach: {topTeam.coach}</span>
         <div>
           <span className="text-center">Points: {topTeam.points}</span>

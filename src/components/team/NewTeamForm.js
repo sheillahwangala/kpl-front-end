@@ -31,9 +31,7 @@ function NewTeamForm({ setTeams }) {
         logo: logo,
         coach: coach,
       }),
-    })
-      .then((response) => response.json())
-      .then((data) => setTeams(data));
+    }).then((response) => response.json());
   };
 
   return (

@@ -28,6 +28,9 @@ function Nav() {
         <Link to="players-stats" className="text-decoration-none">
           <li>Players Stats</li>
         </Link>
+        <Link to="/new-team" className="text-decoration-none">
+          <li>Add Team</li>
+        </Link>
       </ul>
       <button className="mobile__menu__icon" onClick={() => setMobile(!mobile)}>
         {mobile ? <ImCross /> : <FaBars />}

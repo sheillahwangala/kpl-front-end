@@ -6,7 +6,9 @@ import Nav from "./components/nav/Nav";
 import TeamStats from "./components/team/TeamStats";
 import PlayersStats from "./components/player/PlayersStats";
 import EachTeam from "./components/team/EachTeam";
+
 import Players from "./components/player/Players";
+import NewTeamForm from "./components/team/NewTeamForm";
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,7 @@ function App() {
           <Route path="/players-stats" element={<PlayersStats />} />
           <Route path="/teams/:id" element={<EachTeam />} />
           <Route path="/players" element={<Players />} />
+          <Route path="/new-team" element={<NewTeamForm />} />
         </Routes>
       </BrowserRouter>
     </div>

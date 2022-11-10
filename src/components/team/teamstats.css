@@ -1,0 +1,43 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.top-title {
+    padding: 20px;
+    margin-bottom: -30px;
+    margin-top: 20px;
+    margin-left: 40px;
+   
+}
+.all-cards {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.top-player-card {
+    box-shadow: 2px 4px 8px 4px #8f6cc6;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.top-team-logo {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+.top-team-logo Link{
+    text-decoration: none;
+    color: black;
+}
+.top-attr h6{
+    border-top: 30px;
+    font-size: large;
+    text-align: left;
+    font-weight: 900;
+    margin: 10px;
+    color: black;
+}

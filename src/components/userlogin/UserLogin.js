@@ -16,16 +16,16 @@ function UserLogin({ userName,setUserName, userPass, setUserPass, addAUser}) {
             <img src={profile} alt="profile" className="profile"/>
           </div>
         </div>
-    <div>
-      <h1>Sign In</h1>
+        <div>
+          <h1>Sign In</h1>
           <div>
-      <input
-        type="text"
+            <input 
+            type="text" 
             placeholder="user name"
             className="name"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-      />
+            />
           </div>
           <div className="second-input">
             <img src={pass} alt="pass" className="email"/>
@@ -38,8 +38,8 @@ function UserLogin({ userName,setUserName, userPass, setUserPass, addAUser}) {
             />
           </div>
          <div className="login-button">
-      <button onClick={addAUser}>Sign In</button>
-    </div>
+         <button onClick={addAUser}>Sign In</button>
+         </div>
           
            <p className="link">
              <a href="#">Forgot password ?</a> | <a href="#">Sign Up</a>

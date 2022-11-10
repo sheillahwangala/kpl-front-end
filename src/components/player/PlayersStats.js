@@ -38,7 +38,7 @@ function PlayersStats() {
           height="50px"
         />
       </td>
-      <td>{playerAsssist.name}</td>
+      <td>{playerAsssist.team.name}</td>
       <td>
         <h5>{playerAsssist.assists}</h5>
       </td>

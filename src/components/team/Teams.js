@@ -12,35 +12,32 @@ function Teams() {
       .then((data) => setTeams(data));
   }, []);
 
-  // const displayTeams = teams.map((team) => (
-  //   <div key={team.id} className="container">
-  //     <h2>{team.name}</h2>
-  //     <img src={team.logo} alt="logo" height="100px" />
-  //     <h5>{team.coach} </h5>
-  //     <Link to={`/teams/${team.id}`}>See Team</Link>
-  //   </div>
-  // ));
-
   return (
-    <div className="home-page" >
-      <div className="container" >
-        {/* {displayTeams} */}
+    <div className="home-page">
+      <div className="container">
         <hr></hr>
-        <table className="table table-striped" >
-          <tr className="classHeader" >
+        <table className="table table-striped">
+          <tr className="classHeader ">
+            <th>Position</th>
             <th>Team Name</th>
             <th>Team Logo</th>
-            <th>Games Played</th>
+            <th className="w-100">Games Played</th>
             <th>Won</th>
             <th>Drawn</th>
             <th>Lost</th>
             <th>Points</th>
           </tr>
-          {teams.map((team, key) => {
+          {teams.map((team, index) => {
             return (
-              <tr key={team.id} >
-                <td className="team-name" >
-                  <Link className="text-decoration-none text-dark" to={`/teams/${team.id}`}>{team.name}</Link>
+              <tr key={team.id}>
+                <td>{index + 1}</td>
+                <td className="team-name w-100">
+                  <Link
+                    className="text-decoration-none text-dark"
+                    to={`/teams/${team.id}`}
+                  >
+                    {team.name}
+                  </Link>
                 </td>
                 <td>
                   <img src={team.logo} alt="logo" height="100px" />
@@ -51,16 +48,12 @@ function Teams() {
                 <td>{team.matches_lost}</td>
                 <td>{team.points}</td>
               </tr>
-            )
+            );
           })}
-
-        </table> <br></br>
+        </table>{" "}
       </div>
 
-      {/* <div className="add-team" >
-        <h3>Add Team</h3>
-        <NewTeamForm setTeams={setTeams} />
-      </div> */}
+     
 
     </div>
   );

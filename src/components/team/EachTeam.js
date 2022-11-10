@@ -44,36 +44,46 @@ function EachTeam() {
               <p>Matches drawn: {team.matches_drawn}</p>
             </div>
           </div>
+          {team.players.length > 0 && (
+            <h2 className="text-center text-decoration-underline">
+              Players for {team.name}
+            </h2>
+          )}
 
-          <h2 className="text-center text-decoration-underline">
-            Players for {team.name}
-          </h2>
-          <div className="d-flex justify-content-evenly flex-wrap">
-            {team.players.map((player) => (
-              <div className="d-flex flex-column justify-content-center border border-2  rounded-3 m-2 p-2 each-player-div">
-                <img src={player.image} alt="Img" height="200px" />
-                <Link
-                  to={`/players/${player.id}`}
-                  className="text-decoration-none text-dark"
-                >
-                  <h2 className="text-center">{player.name}</h2>
-                </Link>
+          {team.players.length > 0 ? (
+            <div className="d-flex justify-content-evenly flex-wrap">
+              {team.players.map((player) => (
+                <div className="d-flex flex-column justify-content-center border border-2  rounded-3 m-2 p-2 each-player-div">
+                  <img src={player.image} alt="Img" height="200px" />
+                  <Link
+                    to={`/players/${player.id}`}
+                    className="text-decoration-none text-dark"
+                  >
+                    <h2 className="text-center">{player.name}</h2>
+                  </Link>
 
-                <button
-                  type="button"
-                  className="btn btn-danger btn-sm"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    fetch(`http://127.0.0.1:9292/players/${player.id}`, {
-                      method: "DELETE",
-                    });
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
-          </div>
+                  <button
+                    type="button"
+                    className="btn btn-danger btn-sm"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      fetch(`http://127.0.0.1:9292/players/${player.id}`, {
+                        method: "DELETE",
+                      });
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <h2 className="text-center text-decoration-underline">
+                No players for {team.name}
+              </h2>
+            </div>
+          )}
         </div>
       )
   );

@@ -38,8 +38,6 @@ function AddPlayer({ teamId }) {
       .then((data) => setPlayer(data));
   };
 
-  // console.log(teamId)
-
   return (
     <div className="d-flex justify-content-center flex-column">
       <h3 className="text-center">Add Player</h3>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./player.css"
+import "./player.css";
 
 function PlayersStats() {
   const [playerGoals, setplayerGoals] = useState([]);
@@ -17,45 +16,60 @@ function PlayersStats() {
   }, []);
 
   const playerStatisticsGoals = playerGoals.map((playerGoal) => (
-      
-        <tr key={playerGoal.id}>
-          <td>{playerGoal.name}</td>
-          <td><img src={playerGoal.image} className="imgS"alt="logo" height = "50px" /></td>
-          <td>{playerGoal.name}</td>
-          <td><h5>{playerGoal.goals} </h5></td>
-          </tr>       
+    <tr key={playerGoal.id}>
+      <td>{playerGoal.name}</td>
+      <td>
+        <img src={playerGoal.image} className="imgS" alt="logo" height="50px" />
+      </td>
+      <td>{playerGoal.team.name}</td>
+      <td>
+        <h5>{playerGoal.goals} </h5>
+      </td>
+    </tr>
   ));
-  const playerStatisticsAssits = playerAssists.map((playerAsssist) => (       
-        <tr key={playerAsssist.id}>
-          <td>{playerAsssist.name}</td>
-          <td><img src={playerAsssist.image} className="imgS"alt="logo" height = "50px"/></td>
-          <td>{playerAsssist.name}</td>
-          <td><h5>{playerAsssist.assists}</h5></td>
-          </tr>    
+  const playerStatisticsAssits = playerAssists.map((playerAsssist) => (
+    <tr key={playerAsssist.id}>
+      <td>{playerAsssist.name}</td>
+      <td>
+        <img
+          src={playerAsssist.image}
+          className="imgS"
+          alt="logo"
+          height="50px"
+        />
+      </td>
+      <td>{playerAsssist.name}</td>
+      <td>
+        <h5>{playerAsssist.assists}</h5>
+      </td>
+    </tr>
   ));
   return (
-    <div className="playerStats">
-      <h2>Top Goalscorers</h2>
-      <table>
-        <tr>
-          <th>Name of player</th>
-          <th>Image</th>
-          <th>Team</th>
-          <th>Goals</th>
-        </tr>
-      {playerStatisticsGoals}
-      </table>
-      <h2>Top Assisters</h2>
-      <table>
-      <tr>
-          <th>Name of player</th>
-          <th>Image</th>
-          <th>Team</th>
-          <th>Assists</th>
-        </tr>
-      
-      {playerStatisticsAssits}
-      </table>
+    <div className="d-flex flex-row justify-content-evenly">
+      <div className="playerStats">
+        <h2 className="text-decoration-underline my-2">Top Goalscorers</h2>
+        <table className="player-stats-table">
+          <tr>
+            <th>Name of player</th>
+            <th>Image</th>
+            <th>Team</th>
+            <th>Goals</th>
+          </tr>
+          {playerStatisticsGoals}
+        </table>
+      </div>
+      <div className="playerStats">
+        <h2 className="text-decoration-underline my-2">Top Assisters</h2>
+        <table className="player-stats-table">
+          <tr>
+            <th>Name of player</th>
+            <th>Image</th>
+            <th>Team</th>
+            <th>Assists</th>
+          </tr>
+          {playerStatisticsAssits}
+        </table>
+      </div>
     </div>
   );
 }

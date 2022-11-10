@@ -1,3 +1,6 @@
+.d-flex{
+  background-image: url("../images/ball.png");
+}
 .player-stats-table {
   text-align: center;
   margin: 0 auto;

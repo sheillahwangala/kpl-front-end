@@ -1,3 +1,11 @@
+.d-flex{
+  padding-bottom: 9%;
+  background-image: url("../images/ball.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 10%;
+}
 .player-stats-table {
   text-align: center;
   margin: 0 auto;

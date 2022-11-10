@@ -19,7 +19,7 @@ function PlayersStats() {
     <tr key={playerGoal.id}>
       <td>{playerGoal.name}</td>
       <td>
-        <img src={playerGoal.image} className="imgS" alt="logo" height="50px" />
+        <img src={playerGoal.image} className="rounded-circle " alt="logo" height="50px" />
       </td>
       <td>{playerGoal.team_id}</td>
       <td>

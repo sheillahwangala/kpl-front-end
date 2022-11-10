@@ -5,6 +5,8 @@
     padding-top: 90px;
     padding-bottom: 90px;
     background-color: #e1e3eb;
+    background-image: url("../images/ball.png");
+    background-size:25%;
   }
   .sub-main {
     display: flex;

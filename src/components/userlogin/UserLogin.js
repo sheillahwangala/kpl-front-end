@@ -4,7 +4,9 @@ import profile from "./../images/avatar.png";
 import email from "./../images/email.jpg";
 import pass from "./../images/pass.png";
 
-function UserLogin({ name, setName, addAUser }) {
+function UserLogin({ userName,setUserName, userPass, setUserPass, addAUser}) {
+
+
   return (
     <div>
       <h1>Sign In</h1>

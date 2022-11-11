@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function Nav({ signedInUser }) {
   const [mobile, setMobile] = useState(false);
   const navigate = useNavigate();
+  
   return (
     <nav className="nav__bar">
       <Link to="/" className="nav__logo text-decoration-none text-light">
@@ -20,9 +21,6 @@ function Nav({ signedInUser }) {
       >
         <Link to="/" className="text-decoration-none">
           <li>Teams</li>
-        </Link>
-        <Link to="/team-stats" className="text-decoration-none">
-          <li>Team stats</li>
         </Link>
         <Link to="/players" className="text-decoration-none">
           <li>Players</li>

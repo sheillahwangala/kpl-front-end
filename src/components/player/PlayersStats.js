@@ -31,12 +31,7 @@ function PlayersStats() {
     <tr key={playerAsssist.id}>
       <td>{playerAsssist.name}</td>
       <td>
-        <img
-          src={playerAsssist.image}
-          className="rounded-circle "
-          alt="logo"
-          height="50px"
-        />
+        <img src={playerAsssist.image} alt="logo" height="50px" />
       </td>
       <td>{playerAsssist.team_id}</td>
       <td>

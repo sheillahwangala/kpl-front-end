@@ -14,21 +14,19 @@ function TeamStats() {
   }, []);
 
   const displayTopTeams = topTeams.map((topTeam, index) => (
-    <div key={topTeam.id} className="top-player-card" >
+    <div key={topTeam.id} className="top-player-card my-4">
       <h1>{index + 1}</h1>
 
-      <div className="top-team-logo" >
-         
-          <Link to={`/teams/${topTeam.id}`}>
-            <h3>{topTeam.name}</h3>
-          </Link>
+      <div className="top-team-logo">
+        <Link to={`/teams/${topTeam.id}`}>
+          <h3>{topTeam.name}</h3>
+        </Link>
         <img src={topTeam.logo} alt="logo" height="250px" />
       </div>
 
-      <div className="top-attr" >
-        <h6 >Coach: {topTeam.coach}</h6>       
+      <div className="top-attr">
+        <h6>Coach: {topTeam.coach}</h6>
         <h6>Points: {topTeam.points}</h6>
-  
 
         {topTeam.players.map((player) => (
           <div key={player.id}>
@@ -38,13 +36,13 @@ function TeamStats() {
         ))}
       </div>
     </div>
-  
   ));
 
   return (
     <div>
-      <h2 className="top-title">Top Teams Statistics</h2><hr></hr>
-      <div className="all-cards" >{displayTopTeams}</div>
+      <h2 className="top-title">Top Teams Statistics</h2>
+      <hr></hr>
+      <div className="all-cards">{displayTopTeams}</div>
     </div>
   );
 }

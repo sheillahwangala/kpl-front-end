@@ -36,10 +36,16 @@ function App() {
           <Nav signedInUser={signedInUser} />
           <Routes>
             <Route path="/" element={<Teams signedInUser={signedInUser} />} />
-            <Route path="/players/:id" element={<Player signedInUser={signedInUser} />} />
+            <Route
+              path="/players/:id"
+              element={<Player signedInUser={signedInUser} />}
+            />
             <Route path="/team-stats" element={<TeamStats />} />
             <Route path="/players-stats" element={<PlayersStats />} />
-            <Route path="/teams/:id" element={<EachTeam signedInUser={signedInUser} />} />
+            <Route
+              path="/teams/:id"
+              element={<EachTeam signedInUser={signedInUser} />}
+            />
             <Route path="/players" element={<Players />} />
             <Route path="/new-team" element={<NewTeamForm />} />
           </Routes>

@@ -11,6 +11,9 @@ function UserLogin({ userName,setUserName, userPass, setUserPass, addAUser}) {
     <div className="main">
     <div className="sub-main">
       <div>
+        <div className="header">
+          <h2>Welcome to <span>Kenya Premier League</span></h2>
+        </div>
         <div className="imgs">
           <div className="container-image">
             <img src={profile} alt="profile" className="profile"/>

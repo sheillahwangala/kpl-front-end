@@ -6,6 +6,18 @@ import profile from "./../images/avatar.png";
 function UserLogin({ name, setName, addAUser }) {
   return (
     <div className="main">
+
+    <div className="sub-main">
+      <div>
+        <div className="header">
+          <h2>Welcome to <span>Kenya Premier League</span></h2>
+        </div>
+        <div className="imgs">
+          <div className="container-image">
+            <img src={profile} alt="profile" className="profile"/>
+          </div>
+        </div>
+
       <div className="sub-main">
         <div>
           <div className="imgs">

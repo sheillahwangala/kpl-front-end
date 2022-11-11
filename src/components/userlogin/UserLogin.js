@@ -1,58 +1,40 @@
 import React from "react";
-import './UserLogin.css';
+import "./UserLogin.css";
 import profile from "./../images/avatar.png";
-import email from "./../images/email.jpg";
-import pass from "./../images/pass.png";
-
-function UserLogin({ userName,setUserName, userPass, setUserPass, addAUser}) {
 
 
+function UserLogin({ name, setName, addAUser }) {
   return (
     <div className="main">
-    <div className="sub-main">
-      <div>
-        <div className="imgs">
-          <div className="container-image">
-            <img src={profile} alt="profile" className="profile"/>
-          </div>
-        </div>
+      <div className="sub-main">
         <div>
-          <h1>Sign In</h1>
+          <div className="imgs">
+            <div className="container-image">
+              <img src={profile} alt="profile" className="profile" />
+            </div>
+          </div>
           <div>
-            <input 
-            type="text" 
-            placeholder="user name"
-            className="name"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            />
-          </div>
-          <div className="second-input">
-            <img src={pass} alt="pass" className="email"/>
-            <input 
-            type="password" 
-            placeholder="user name" 
-            className="name"
-            value={userPass}
-            onChange={(e) => setUserPass(e.target.value)}
-            />
-          </div>
-         <div className="login-button">
-         <button onClick={addAUser}>Sign In</button>
-         </div>
-          
-           <p className="link">
-             <a href="#">Forgot password ?</a> | <a href="#">Sign Up</a>
-           </p>
-          
+            <h1>Sign In</h1>
+            <small className="small">
+              Kindly add your name so we can personalize your experience
+            </small>
+            <div>
+              <input
+                type="text"
+                placeholder="user name"
+                className="input"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
 
+            <div className="login-button">
+              <button onClick={addAUser}>Sign In</button>
+            </div>
+          </div>
         </div>
       </div>
-      
-
     </div>
-   </div>
-
   );
 }
 

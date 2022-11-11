@@ -35,31 +35,39 @@ function NewTeamForm({ setTeams }) {
   };
 
   return (
-    <div>
-      <label>Logo</label>
-      <input
-        type="file"
-        id="file-selector"
-        onChange={(e) => {
-          uploadImage(e.target.files);
-        }}
-      />
-      <input
-        type="text"
-        placeholder="Team Coach"
-        value={coach}
-        onChange={(e) => setCoach(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Team Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <div className="container">
+      <div className="d-flex flex-column justify-content-center">
+        <label>Choose a team logo </label>
+        <input
+          type="file"
+          id="file-selector"
+          onChange={(e) => {
+            uploadImage(e.target.files);
+          }}
+        />
+        <input
+          type="text"
+          placeholder="Team Coach"
+          className="mt-2 form-control"
+          value={coach}
+          onChange={(e) => setCoach(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Team Name"
+          value={name}
+          className="mt-2 form-control"
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <button type="submit" onClick={createTeam}>
-        Create Team
-      </button>
+        <button
+          type="submit"
+          onClick={createTeam}
+          className="btn btn-primary my-4"
+        >
+          Create Team
+        </button>
+      </div>
     </div>
   );
 }

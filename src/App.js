@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Teams from "./components/team/Teams";
 import Player from "./components/player/Player";
 import Nav from "./components/nav/Nav";
-import TeamStats from "./components/team/TeamStats";
 import PlayersStats from "./components/player/PlayersStats";
 import EachTeam from "./components/team/EachTeam";
 import UserLogin from "./components/userlogin/UserLogin";
@@ -36,10 +35,16 @@ function App() {
           <Nav signedInUser={signedInUser} />
           <Routes>
             <Route path="/" element={<Teams signedInUser={signedInUser} />} />
-            <Route path="/players/:id" element={<Player signedInUser={signedInUser} />} />
-            <Route path="/team-stats" element={<TeamStats />} />
+            <Route
+              path="/players/:id"
+              element={<Player signedInUser={signedInUser} />}
+            />
+
             <Route path="/players-stats" element={<PlayersStats />} />
-            <Route path="/teams/:id" element={<EachTeam signedInUser={signedInUser} />} />
+            <Route
+              path="/teams/:id"
+              element={<EachTeam signedInUser={signedInUser} />}
+            />
             <Route path="/players" element={<Players />} />
             <Route path="/new-team" element={<NewTeamForm />} />
           </Routes>

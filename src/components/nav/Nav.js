@@ -21,9 +21,6 @@ function Nav({ signedInUser }) {
         <Link to="/" className="text-decoration-none">
           <li>Teams</li>
         </Link>
-        <Link to="/team-stats" className="text-decoration-none">
-          <li>Team stats</li>
-        </Link>
         <Link to="/players" className="text-decoration-none">
           <li>Players</li>
         </Link>

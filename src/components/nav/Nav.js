@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function Nav({ signedInUser }) {
   const [mobile, setMobile] = useState(false);
   const navigate = useNavigate();
+  
   return (
     <nav className="nav__bar">
       <Link to="/" className="nav__logo text-decoration-none text-light">

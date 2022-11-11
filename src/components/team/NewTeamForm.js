@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewTeamForm({ setTeams }) {
   const [name, setName] = useState("");
   const [logo, setLogo] = useState("");
   const [coach, setCoach] = useState("");
+  const navigate = useNavigate();
 
   const uploadImage = (files) => {
     const formData = new FormData();
@@ -31,7 +33,11 @@ function NewTeamForm({ setTeams }) {
         logo: logo,
         coach: coach,
       }),
-    }).then((response) => response.json());
+    }).then((response) => response.json())
+    setTimeout(()=>{
+      navigate("/");
+    }, 1000)
+  
   };
 
   return (
